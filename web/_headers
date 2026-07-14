@@ -1,0 +1,5 @@
+# Serve PDF downloads with a sensible content type
+/assets/pdfs/*
+  Content-Type: application/pdf
+  Content-Disposition: inline
+  Cache-Control: public, max-age=86400

@@ -2,10 +2,11 @@
   "name": "feroziorg",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
   "description": "Ferozi.org static site — mockup-faithful rebuild",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/build-static.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
