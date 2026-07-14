@@ -1,0 +1,14 @@
+{
+  "name": "feroziorg",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Ferozi.org static site — mockup-faithful rebuild",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

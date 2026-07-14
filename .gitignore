@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.netrc
+.env
+.env.*
+scripts/config.local.py
+**/__pycache__/
+*.pyc
+
+# Large FTP mirror / legacy generated dump (keep local only)
+source/
+site/
