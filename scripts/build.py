@@ -196,7 +196,7 @@ def build_section_nav_map() -> dict[str, list[dict[str, str]]]:
         ],
         BIO_SECTION: [
             {"label": "Blessed Personalities", "href": BIO_SECTION},
-            {"label": "Hazrat Pir Sayyed Feroz Shah Qasimi (D.B.A.)", "href": "hazratppirsayyedferozshahqasimi.html"},
+            {"label": "Hazrat Pir Sayyed Feroz Shah Qasimi (R.A.)", "href": "hazratppirsayyedferozshahqasimi.html"},
             {"label": "Shahzada Hazrat Sayyed Ali Muhammad Shah Shaheed (R.A.)", "href": "shahzadahazratsayyedali.html"},
             {"label": "Shahzada Hazrat Sayyed Anwaar Husain Shah (R.A.)", "href": "hazratsayyedanwaarhusain.html"},
             {"label": "Hazrat Pir Sain Muhammad Qasim Mashori (R.A.)", "href": "pirsainmuhammadqasim.html"},
@@ -608,7 +608,7 @@ BIOGRAPHY_TABS = [
         "tab_id": "bio-feroz",
         "line1": "Hazrat Pir Sayyed",
         "line2": "Feroz Shah Qasimi",
-        "suffix": "(D.B.A.)",
+        "suffix": "(R.A.)",
     },
     {
         "file": "shahzadahazratsayyedali.html",
@@ -988,10 +988,10 @@ def build_biographies_page() -> str:
             f'<div class="legacy-content mockup-content-pane">{content}</div></div>'
         )
     pills = ferozi_pills_tab_html(BIOGRAPHY_TABS, BIOGRAPHY_TABS[0]["tab_id"])
-    banner = mockup_page_banner("Sacred Biographies")
+    banner = mockup_page_banner("Biographies")
     body = banner + mockup_two_col_layout(pills, "".join(panes))
     return page_shell(
-        "Sacred Biographies",
+        "Biographies",
         "blessed_personalities.html",
         body,
         mockup_layout=True,
@@ -1093,36 +1093,59 @@ def build_home() -> str:
         active = " active" if i == 0 else ""
         slide_html.append(
             f"""
-        <div class="carousel-item{active}">
-          <div class="img-testimonials">
-            <div class="testimonial description-div row g-0 align-items-start">
-              <div class="col-lg-6 banner-img">
+              <div class="carousel-item{active}">
                 <img src="{img}" alt="Hazrat Pir Sayyed Feroz Shah Qasimi">
-              </div>
-              <div class="col-lg-6 banner-text">
-                <h5>{MOCKUP_HOME_URDU_H5}</h5>
-                <p>{MOCKUP_HOME_URDU_P}</p>
-              </div>
-            </div>
-          </div>
-        </div>"""
+              </div>"""
+        )
+
+    quotes = [
+        (
+            "تم اپنے قلب اور اپنی روح کو اللہ کے ذکر سے پاک کیوں نہیں کر لیتے۔",
+            "Why do you not purify your heart and your soul with the remembrance of Allah?",
+        ),
+        (
+            "شریعت کہتے ہیں تھیوری کو اور طریقت کہتے ہیں پریکٹیکل کو۔",
+            "Shariah is the theory with which you act, and Tareeqat is the discipline.",
+        ),
+        (
+            "اللہ کے کامل ولی کرامت کو اچھی چیز نہیں سمجھتے۔ بلکہ کرامت سے بہت بڑی چیز استقامت ہے۔",
+            "The closest friends of Allah do not regard miracles as a virtue. Rather, far greater than a miracle is perseverance.",
+        ),
+        (
+            "جس نے اپنے آپ کو پہچان لیا گویا اس نے اپنے رب کو پہچان لیا۔",
+            "Whoever comes to know himself has, as it were, come to know his Lord.",
+        ),
+    ]
+    quote_html = []
+    for i, (ur, en) in enumerate(quotes):
+        active = " is-active" if i == 0 else ""
+        quote_html.append(
+            f"""<blockquote class="banner-quote{active}">
+                <p class="banner-quote-ur" lang="ur" dir="rtl">{ur}</p>
+                <p class="banner-quote-en" lang="en" dir="ltr">{en}</p>
+              </blockquote>"""
         )
 
     hero_html = f"""
   <div class="container-fluid mockup-banner banner">
     <div class="row">
       <div class="container">
-        <div id="homeHeroCarousel" class="carousel slide mockup-hero-carousel" data-bs-ride="carousel" data-bs-interval="8000">
-          <div class="carousel-inner">
-            {''.join(slide_html)}
+        <div class="row banner-hero g-0 align-items-center">
+          <div class="col-lg-6 banner-img">
+            <div id="homeHeroCarousel" class="carousel slide carousel-fade banner-img-carousel"
+                 data-bs-ride="carousel" data-bs-interval="6000">
+              <div class="carousel-inner">
+                {''.join(slide_html)}
+              </div>
+            </div>
           </div>
-          <div class="controls-top">
-            <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="prev" aria-label="Previous">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="next" aria-label="Next">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+          <div class="col-lg-6 banner-quotes" lang="ur" dir="rtl">
+            <p class="banner-quotes-label">اقوالِ حضرت پیر سید فیروز شاہ قاسمی (رہ)</p>
+            <div class="banner-quote-carousel" id="banner-quotes">
+              <div class="banner-quote-stage">
+                {''.join(quote_html)}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1161,6 +1184,22 @@ def build_home() -> str:
       </div>
     </div>
 
+    <div class="container-fluid home-intro">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="home-intro-inner text-center">
+              <p class="home-intro-eyebrow">Jamat-e-Qasmia Ferozia Ahle Sunnat Pakistan (Trust)</p>
+              <span class="home-intro-rule" aria-hidden="true"></span>
+              <h2 class="home-intro-title">His Illustrious Majesty Yusuf-ul-Aulia</h2>
+              <p class="home-intro-lead">Hazart Pir Sayyed Feroz Shah Qasimi (Damat Barakatuhumul Aliah)</p>
+              <p class="home-intro-body">{MOCKUP_HOME_URDU_P}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid event-program">
       <div class="container">
         <div class="row">
@@ -1169,7 +1208,7 @@ def build_home() -> str:
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="event-content text-center">
-                    <h2>Events &amp; Programs</h2>
+                    <h2>Teachings</h2>
                     <p>Sacred gatherings and Urs Shareef programs</p>
                     <div class="event-embed">
                       <iframe src="https://vimeo.com/album/5664265/embed" allowfullscreen

@@ -26,7 +26,7 @@ NAV = """\
 
 BIO_SIDEBAR = """\
                             <div class="nav flex-column nav-pills" role="navigation">
-                                <a class="nav-link" href="biographies.html"><p>Hazrat Pir Sayyed</p><h5>Feroz Shah Qasimi</h5><span>(D.B.A.)</span></a>
+                                <a class="nav-link" href="biographies.html"><p>Hazrat Pir Sayyed</p><h5>Feroz Shah Qasimi</h5><span>(R.A.)</span></a>
                                 <a class="nav-link" href="biographies.html#ali"><p>Shahzada Hazrat Sayyed</p><h5>Ali Muhammad Shah Shaheed</h5><span>(R.A.)</span></a>
                                 <a class="nav-link" href="biographies.html#anwaar"><p>Shahzada Hazrat Sayyed</p><h5>Anwaar Hussain Shah</h5><span>(R.A.)</span></a>
                                 <a class="nav-link" href="biographies.html#qasim"><p>Hazrat Pir Sain</p><h5>Muhammad Qasim Mashori</h5><span>(R.A.)</span></a>

@@ -37,7 +37,7 @@ OVERRIDES = {
     "biographies.html": {
         "title": "Ferozi - Blessed Personalities",
         "description": (
-            "Sacred biographies of Hazrat Pir Sayyed Feroz Shah Qasimi and the blessed "
+            "Biographies of Hazrat Pir Sayyed Feroz Shah Qasimi and the blessed "
             "personalities of Jamat-e-Qasmia Ferozia Ahl-e-Sunnat Pakistan (Trust), "
             "including Silsila Tayyaba and Shajra-e-Tayyaba."
         ),
@@ -170,7 +170,7 @@ def main() -> int:
             fallbacks = {
                 "video-gallery.html": "Video Gallery | Ferozi.org",
                 "publications.html": "Our Publications | Ferozi.org",
-                "biographies.html": "Sacred Biographies | Ferozi.org",
+                "biographies.html": "Biographies | Ferozi.org",
             }
             merged["title"] = fallbacks.get(web_name, "Ferozi.org")
         if not merged.get("description"):
