@@ -1104,10 +1104,6 @@ def build_home() -> str:
             "Why do you not purify your heart and your soul with the remembrance of Allah?",
         ),
         (
-            "شریعت کہتے ہیں تھیوری کو اور طریقت کہتے ہیں پریکٹیکل کو۔",
-            "Shariah is the theory with which you act, and Tareeqat is the discipline.",
-        ),
-        (
             "اللہ کے کامل ولی کرامت کو اچھی چیز نہیں سمجھتے۔ بلکہ کرامت سے بہت بڑی چیز استقامت ہے۔",
             "The closest friends of Allah do not regard miracles as a virtue. Rather, far greater than a miracle is perseverance.",
         ),
